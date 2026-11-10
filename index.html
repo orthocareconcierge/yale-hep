@@ -447,7 +447,7 @@ body {
   </div>
   <div class="page-content">
     <div class="section-label">Stop Immediately If</div>
-    <div class="precaution-card"><h4>Red Flags &mdash; Stop And Contact Kelly</h4><ul id="redflags-list"></ul></div>
+    <div class="precaution-card"><h4>Red Flags, Stop And Contact Kelly</h4><ul id="redflags-list"></ul></div>
     <div id="restrictions-list"></div>
     <div class="section-label">Pain During Exercise</div>
     <div class="card">
@@ -470,7 +470,7 @@ body {
   <div class="page-content">
     <div id="report-chrome">
       <div class="card card-gold intro-card">
-        <p>This is your progress log. To send it to Kelly: tap <b>Save As PDF</b> below. The print screen opens &mdash; on iPhone, tap the <b>Share</b> icon, then send the PDF to Kelly however you like (Messages or Mail).</p>
+        <p>This is your progress log. To send it to Kelly: tap <b>Save As PDF</b> below. The print screen opens, on iPhone, tap the <b>Share</b> icon, then send the PDF to Kelly however you like (Messages or Mail).</p>
       </div>
       <button class="export-btn" onclick="window.print()">&#128424; Save As PDF</button>
     </div>
@@ -513,6 +513,8 @@ const dailyIntro = 'This is your daily plan. Checking it off means you did it to
 const dailyExercises = [
   { name: 'Posture Openers', rx: '5 sec holds · 5 reps · hourly', log: false, video: 'posture-openers.mp4',
     cues: ['Stand tall with your arms relaxed by your sides.', 'Rotate your palms outward so they face forward.', 'Squeeze your shoulder blades back and down, then hold for 5 seconds.'] },
+  { name: 'First Rib Mobilization with Strap', rx: '15 reps per side · 2 sets daily', log: false, video: 'first-rib-mob.mp4',
+    cues: ['Loop the strap over your shoulder, as close to the base of the neck as possible.', 'Whichever side the strap is on, place that hand behind your back to keep the shoulder blade down.', 'Apply a gentle downward pull as you side-bend and rotate your head away.', 'Keep it easy and rhythmic, with no forcing or pinching.'] },
   { name: 'Pretzel', rx: '30 sec hold · 3 reps · each side', log: false, video: 'pretzel.mp4',
     cues: ['Lie on your side with your bottom leg straight and your top knee bent up, resting on the floor or a pillow.', 'Hold the top knee down with your bottom hand so it stays put.', 'Reach your top arm up and over, rotating your trunk open toward the ceiling until you feel a stretch through the low back and glute.', 'Let your head and shoulder follow the reach, breathe into it, and hold. Do both sides.'] },
   { name: 'Transversus Abdominis', rx: '5 sec holds · 10 reps', log: false, video: 'transverse-abdominus.mp4',
@@ -661,7 +663,7 @@ function exerciseCard(section, idx, ex) {
 }
 function renderLogBlock(section, idx, sets) {
   return `<div class="log-section">
-    <h5>Log Sets &mdash; Reps &amp; Load</h5>
+    <h5>Log Sets, Reps &amp; Load</h5>
     <div class="log-col-headers"><span></span><span>Reps</span><span>Load</span></div>
     <div id="sets-${section}-${idx}">${sets.map((s, si) => renderSetRow(section, idx, si, s)).join('')}</div>
     <button class="add-set-btn" onclick="addSet('${section}',${idx})">+ Add Set</button>
@@ -966,7 +968,7 @@ function renderReport() {
   }
   const logs = buildReportLogs();
   if (logs) h += `<div class="rep-h">Exercise Logs</div>` + logs;
-  h += `<div class="rep-foot">OrthoCare Concierge LLC &mdash; Kelly Davis<br>Proprietary &amp; Confidential</div>`;
+  h += `<div class="rep-foot">OrthoCare Concierge LLC, Kelly Davis<br>Proprietary &amp; Confidential</div>`;
   document.getElementById('print-area').innerHTML = h;
 }
 function buildReportLogs() {
